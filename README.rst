@@ -5,7 +5,7 @@ This is a test lesson plan. It introduces logging with Python. There are code sa
 
 The documentation is written in restructuredText for use with Sphinx and is in the docs directory.
 
-You need python and sphinx installed.
+To generate the HTML version of the docs you need python with sphinx installed.
 
 .. code-block:: bash
 
@@ -18,4 +18,3 @@ To generate a PDF version of the docs, you also need rst2pdf installed.
 
 See http://thyagjs.blogspot.com/2012/05/create-pdf-document-from-your-sphinx.html
 and https://github.com/ralsina/rst2pdf
-
