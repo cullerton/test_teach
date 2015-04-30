@@ -1,24 +1,6 @@
 import sys
 import logging
-logger = logging.getLogger("test_teach")
-logger.setLevel(logging.INFO)
-
-# create a console handler with level Info
-ch = logging.StreamHandler()
-ch.setLevel(logging.INFO)
-# add the console handler to our logger
-logger.addHandler(ch)
-
-# create a file handler with level Debug
-fh = logging.FileHandler('test_teach.log')
-fh.setLevel(logging.ERROR)
-# create a formatter to use with our file handler
-formatter = logging.Formatter(
-    '%(asctime)s - %(name)s - %(levelname)s - %(message)s')
-# tell our file handler to use the formatter
-fh.setFormatter(formatter)
-# add the file handler to our logger
-logger.addHandler(fh)
+logging.basicConfig(filename='test_teach.log', level=logging.INFO)
 
 USAGE = "Usage: test_teach.py test_input"
 NO_RESPONSE = "We could not find a response for your input. Please try again."
@@ -32,46 +14,45 @@ responses = {'one': 'two',
 
 class TestTeach():
 
+    test_input = None
+    test_response = None
+
     def run(self):
 
-        test_input = self.get_test_input()
-        test_response = self.get_test_response(test_input)
-        self.test_log_statement(test_input, test_response)
-        self.return_test_response(test_response)
-
-    def test_log_statement(self, test_input, test_response):
-        if test_response:
-            logger.info("%s %s" % (test_input, test_response))
-        else:
-            logger.error(test_input)
+        self.test_input = self.get_test_input()
+        logging.info("input is %s" % self.test_input)
+        self.test_response = self.get_test_response()
+        logging.info("response is %s" % self.test_response)
+        self.return_test_response()
 
     def get_test_input(self):
 
-        # if they don't give us input, give them the USAGE message
-        if not len(sys.argv) > 1:
+        try:
+            test_input = sys.argv[1]
+        except IndexError:
             print USAGE
             sys.exit(1)
-
-        return sys.argv[1]
-
-    def get_test_response(self, test_input):
-
-        test_response = responses[test_input.lower()] \
-            if test_input.lower() in responses.keys() else None
-        return test_response
-
-    def return_test_response(self, test_response):
-
-        if test_response:
-            print test_response
         else:
-            print NO_RESPONSE
+            return test_input
+
+    def get_test_response(self):
+
+        if self.test_input.lower() in responses.keys():
+            return responses[self.test_input.lower()]
+        else:
+            return None
+
+    def return_test_response(self):
+
+        print self.test_response if self.test_response else NO_RESPONSE
 
 
 def main():
 
+    logging.info("Begin")
     test_teach = TestTeach()
     test_teach.run()
+    logging.info("End")
 
 if __name__ == '__main__':
     main()

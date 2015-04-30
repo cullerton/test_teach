@@ -12,33 +12,35 @@ responses = {'one': 'two',
 
 class TestTeach():
 
+    test_input = None
+    test_response = None
+
     def run(self):
 
-        test_input = self.get_test_input()
-        test_response = self.get_test_response(test_input)
-        self.return_test_response(test_response)
+        self.test_input = self.get_test_input()
+        self.test_response = self.get_test_response()
+        self.return_test_response()
 
     def get_test_input(self):
 
-        # if they don't give us input, give them the USAGE message
-        if not len(sys.argv) > 1:
+        try:
+            test_input = sys.argv[1]
+        except IndexError:
             print USAGE
             sys.exit(1)
-
-        return sys.argv[1]
-
-    def get_test_response(self, test_input):
-
-        test_response = responses[test_input.lower()] \
-            if test_input.lower() in responses.keys() else None
-        return test_response
-
-    def return_test_response(self, test_response):
-
-        if test_response:
-            print test_response
         else:
-            print NO_RESPONSE
+            return test_input
+
+    def get_test_response(self):
+
+        if self.test_input.lower() in responses.keys():
+            return responses[self.test_input.lower()]
+        else:
+            return None
+
+    def return_test_response(self):
+
+        print self.test_response if self.test_response else NO_RESPONSE
 
 
 def main():
