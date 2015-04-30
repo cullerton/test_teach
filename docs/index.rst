@@ -1,15 +1,16 @@
 Logging with Python
 ===================
 
-In this lesson, we learn about logging with Python.
+Welcome to Logging with Python. This lesson breaks down into four parts:
 
 **Background** establishes some motivation and introduces the concept of logging levels.
 
-In **Logging**, we discover the basics and write some actual log statements.
+In **Logging**, we work with the basics and discover some of their limitations.
 
-Then, in **More Logging**, we dig into the components and customize our logging.
+In **Test Teach**, we apply what we've learned to our class project.
 
-Contents:
+In **More Logging**, we use the components of logging to customize it for our needs.
+
 
 .. toctree::
    :maxdepth: 2
@@ -18,4 +19,10 @@ Contents:
 
    background
    logging
+   test_teach
    more_logging
+
+
+The sample code for this lesson is available at `https://github.com/cullerton/test_teach <https://github.com/cullerton/test_teach>`__.
+
+It includes the sphinx source files for this documentation.
