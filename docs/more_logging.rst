@@ -1,3 +1,5 @@
+.. _more-logging-reference-label:
+
 More Logging
 ============
 
@@ -26,7 +28,7 @@ In this example we:
 
 - instantiate a **logger** object,
 - add two **handlers** to the logger--one which uses a **formatter**, and
-- use the logger to write some simple log statements.
+- use the logger to write some simple **log statements**.
 
 .. code-block:: python
 
@@ -85,24 +87,45 @@ But, we've also written to the file *logging_example.log*, where we see the DEBU
 
 Notice the formatting from our formatter.
 
-At `docs.python.org <https://docs.python.org>`__ you can find more information about:
 
-- `logging <https://docs.python.org/2/library/logging.html>`__
-- `handlers <https://docs.python.org/2/library/logging.handlers.html#module-logging.handlers>`__
-- `attributes available to logging.Formatter <https://docs.python.org/2/library/logging.html#logrecord-attributes>`__
-
---------
-Homework
---------
+---------
+Problem 3
+---------
 
 Add a logger of level INFO to TestTeach that:
 
-- has a console handler of level INFO
-- has a file handler of level ERROR with a custom formatter (different than mine)
-- writes a log statement of level INFO with client input and response if good input
-- writes a log statement of level ERROR with client input if bad input
+- has a console handler of level ERROR,
+- has a file handler of level INFO with a custom formatter,
+
+and
+
+- writes a log statement of level ERROR if there is no input,
+- writes a log statement of level WARNING with the input if there is input but no response, and
+- writes a log statement of level INFO with the input and response if there is both input and a response
+
+Bunus Points
+------------
+
+Use a different formatter then the example.
 
 Extra Credit
 ------------
 
-Add an SMTPHandler to your logger that sends you an email when there is a CRITICAL message.
+- add a log statement of level CRITICAl when the response is 'Zoey', and
+- add an SMTPHandler to your logger that sends you an email when there is a CRITICAL message
+
+
+----
+Help
+----
+
+At `docs.python.org <https://docs.python.org>`__ you can find more information about
+
+- `handlers <https://docs.python.org/2/library/logging.handlers.html#module-logging.handlers>`__, and the
+- `attributes available to logging.Formatter <https://docs.python.org/2/library/logging.html#logrecord-attributes>`__.
+
+There is also a
+
+- `logging reference <https://docs.python.org/2/library/logging.html>`__, and
+-  `logging HOWTO <https://docs.python.org/2/howto/logging.html>`__.
+

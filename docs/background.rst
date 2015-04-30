@@ -1,7 +1,9 @@
+.. _background-reference-label:
+
 Background
 ==========
 
-In this lesson, we start with some motivation and end with an important concept.
+In this lesson, we discuss some motivation and introduce the concept of logging levels.
 
 --------------
 Event Tracking
@@ -30,7 +32,9 @@ you about critical problems with your application.
 Most logging systems allow you to differentiate between levels of importance,
 and tag your log messages with a specific level.
 
-Python logging levels:
+Then, when your application is running, you can choose which levels to view.
+
+Python Logging Levels:
 ----------------------
 
 ======== =========================================================
@@ -43,15 +47,20 @@ Error    Application could not perform function, but still running
 Critical Serious error, application may not be working
 ======== =========================================================
 
-- Logging levels are **ordered**. As an example, if you set the logging level to Info:
+Logging Level Order
+-------------------
+
+- Logging levels are **ordered**.
+- When you choose to view a particular level, you **also see the more important levels**.
+- As an example, if you set the logging level to **Info**:
 
     - You see levels Info, Warning, Error and Critical.
     - You do not see level Debug.
 
-- Python defaults to level **Warning**.
+- Python defaults to viewing level **Warning**.
 
-----------
-Question 1
-----------
+--------
+Question
+--------
 
 By default, which logging levels will you see displayed in a Python application?
