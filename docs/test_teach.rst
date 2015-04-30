@@ -5,8 +5,6 @@ Test Teach
 
 In this lesson, we apply logging to our own application.
 
-Now we can add logging within some Python code.
-
 --------
 Our Code
 --------
@@ -103,7 +101,7 @@ Note that anything extra on the line is ignored.
 Add Some Logging
 ----------------
 
-We'll add two Info level log statements to our application, telling us when it starts running and when it finishes.
+We'll add two INFO level log statements to our application, telling us when it starts running and when it finishes.
 
 First, we import the *logging* module, and use *baseConfig()* to set the logging level to *logging.INFO*.
 
@@ -141,6 +139,11 @@ Now, the output of our application includes the log statements.
     INFO:root:Begin
     last
     INFO:root:End
+
+Question
+--------
+
+What happens if we don't pass any input now?
 
 -----------------
 Logging To A File
