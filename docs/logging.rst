@@ -61,7 +61,7 @@ Questions
 
 - How would you **only** display messages of levels ERROR and CRITICAL?
 
-- How would you only display messages of levels WARNING and CRITICAL?
+- How would you **only** display messages of levels INFO and ERROR?
 
 ---------
 Problem 1
@@ -72,7 +72,5 @@ Write code that produces the following output:
 .. code-block:: bash
 
     $ python logging_example_3.py
-    WARNING:root:Simple warning log statement.
-    CRITICAL:root:Simple critical log statement.
-
-
+    INFO:root:Simple info log statement.
+    ERROR:root:Simple eror log statement.
