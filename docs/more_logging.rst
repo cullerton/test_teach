@@ -111,7 +111,7 @@ Use a different formatter then the example.
 Extra Credit
 ------------
 
-- add a log statement of level CRITICAl when the response is 'Zoey', and
+- add a log statement of level CRITICAL when the response is 'Zoey', and
 - add an SMTPHandler to your logger that sends you an email when there is a CRITICAL message
 
 
